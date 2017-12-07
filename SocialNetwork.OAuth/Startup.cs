@@ -18,6 +18,8 @@ namespace SocialNetwork.OAuth
                 .AddTestUsers(InMemoryConfiguration.Users().ToList())
                 .AddInMemoryClients(InMemoryConfiguration.Clients())
                 .AddInMemoryApiResources(InMemoryConfiguration.ApiResources());
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -28,6 +30,10 @@ namespace SocialNetwork.OAuth
             app.UseDeveloperExceptionPage();
 
             app.UseIdentityServer();
+
+            app.UseStaticFiles();
+
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
