@@ -29,7 +29,7 @@ namespace SocialNetwork.Api
                 .AddJwtBearer(options =>
                 {
                     options.RequireHttpsMetadata = false;
-                    options.Authority = "http://localhost:59418";
+                    options.Authority = "http://localhost:5000";
                     options.Audience = "socialnetwork";
                 });
         }
