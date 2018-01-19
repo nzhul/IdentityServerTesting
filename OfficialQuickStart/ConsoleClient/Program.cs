@@ -48,6 +48,8 @@ namespace ConsoleClient
                 Console.WriteLine(JArray.Parse(content));
             }
 
+            Console.ReadLine();
+
         }
     }
 }
