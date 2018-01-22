@@ -37,6 +37,14 @@ namespace ServerWithAspNetIdentity
             services.AddTransient<IEmailSender, EmailSender>();
 
             services.AddMvc();
+
+            services.AddIdentityServer()
+                .AddDeveloperSigningCredential()
+                .AddInMemoryPersistedGrants()
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryApiResources(Config.GetApiResources())
+                .AddInMemoryClients(Config.GetClients())
+                .AddAspNetIdentity<ApplicationUser>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,7 +63,8 @@ namespace ServerWithAspNetIdentity
 
             app.UseStaticFiles();
 
-            app.UseAuthentication();
+            // app.UseAuthentication();
+            app.UseIdentityServer();
 
             app.UseMvc(routes =>
             {
