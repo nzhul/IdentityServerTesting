@@ -53,7 +53,7 @@ namespace ProtectedMVC.Controllers
             var content = await client.GetStringAsync("http://localhost:5001/identity");
 
             ViewBag.Json = JArray.Parse(content).ToString();
-            return View("json");
+            return View("Json");
         }
     }
 }
