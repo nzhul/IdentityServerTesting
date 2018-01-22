@@ -22,7 +22,7 @@ namespace ConsoleClient
 
             //request token
             var tokenClient = new TokenClient(disco.TokenEndpoint, "ro.client", "secret");
-            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("alice", "password", "api1");
+            var tokenResponse = await tokenClient.RequestResourceOwnerPasswordAsync("dd@abv.bg", "123123", "api1");
 
             if (tokenResponse.IsError)
             {
