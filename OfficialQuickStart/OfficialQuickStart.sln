@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2003
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Server", "Server\Server.csproj", "{28F83556-1968-48E0-9014-3488D4EBC863}"
 EndProject
@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleClient", "ConsoleCli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProtectedMVC", "ProtectedMVC\ProtectedMVC.csproj", "{AAF75BA2-F169-4D6F-8CC7-A3C6F5432E01}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerWithAspNetIdentity", "ServerWithAspNetIdentity\ServerWithAspNetIdentity.csproj", "{82AABEB0-F643-4BEC-B333-35D7D7415A49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServerWithAspNetIdentity", "ServerWithAspNetIdentity\ServerWithAspNetIdentity.csproj", "{82AABEB0-F643-4BEC-B333-35D7D7415A49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavascriptClient", "JavascriptClient\JavascriptClient.csproj", "{D278C762-F8F6-4CAD-80D0-729ABD99EEDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{82AABEB0-F643-4BEC-B333-35D7D7415A49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{82AABEB0-F643-4BEC-B333-35D7D7415A49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{82AABEB0-F643-4BEC-B333-35D7D7415A49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D278C762-F8F6-4CAD-80D0-729ABD99EEDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D278C762-F8F6-4CAD-80D0-729ABD99EEDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D278C762-F8F6-4CAD-80D0-729ABD99EEDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D278C762-F8F6-4CAD-80D0-729ABD99EEDE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
