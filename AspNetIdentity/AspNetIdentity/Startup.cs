@@ -1,7 +1,6 @@
 ﻿using AspNetIdentity.Data;
 using AspNetIdentity.Models;
 using AspNetIdentity.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -36,13 +35,14 @@ namespace AspNetIdentity
                 .AddDefaultTokenProviders();
 
             // ===== Add Jwn Authentication =====
+            // !!! By adding both AddCookie and AddJwtBearer we are enabling Dual Authorization
+            // Please refere to this article for more information -> https://wildermuth.com/2017/08/19/Two-AuthorizationSchemes-in-ASP-NET-Core-2
+            // now both Standart mvc login (Cookie) and WebApi login (Bearer token) will work.
+            // to protect api endpoint - use this: [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)] 
+
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear(); // => remove default claims
-            services.AddAuthentication(options =>
-            {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            })
+            services.AddAuthentication()
+            .AddCookie(cfg => cfg.SlidingExpiration = true)
             .AddJwtBearer(cfg =>
             {
                 cfg.RequireHttpsMetadata = false;
