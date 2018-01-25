@@ -16,7 +16,6 @@ using System.Threading.Tasks;
 
 namespace AspNetIdentity.Controllers.api
 {
-    [Route("[controller]/[action]")]
     public class AccountApiController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -29,7 +28,7 @@ namespace AspNetIdentity.Controllers.api
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             IEmailSender emailSender,
-            ILogger<AccountController> logger,
+            ILogger<Controllers.AccountController> logger,
             IConfiguration configuration)
         {
             _userManager = userManager;
