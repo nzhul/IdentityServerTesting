@@ -1,0 +1,14 @@
+article -> https://www.humankode.com/asp-net-core/develop-locally-with-https-self-signed-certificates-and-asp-net-core
+
+1. Run article-certificate-script.ps1
+2. copy the localhost.pfx from C:\tmp to the project root.
+3. create certificate.json with the following content:
+{
+    "certificateSettings": {
+        "fileName": "localhost.pfx",
+        "password": "didopass"
+    }
+}
+4. Setup Program.cs and Setup.cs like AspNetIdentity project.
+5. Win button -> search for "Manage computer certificates" and move the localhost certificate from Personal to Trusted root
+6. Run the application as console app with "dotnet run"
