@@ -30,7 +30,14 @@ namespace AspNetIdentity
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequiredLength = 2;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+            })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
 
@@ -61,7 +68,7 @@ namespace AspNetIdentity
 
             services.AddMvc(options =>
             {
-                options.SslPort = 44343;
+                options.SslPort = 5000;
                 options.Filters.Add(new RequireHttpsAttribute());
             });
 

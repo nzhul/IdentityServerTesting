@@ -35,12 +35,12 @@ namespace AspNetIdentity
                 .UseKestrel(options =>
                 {
                     options.AddServerHeader = false;
-                    options.Listen(IPAddress.Loopback, 44343, listenOptions =>
+                    options.Listen(IPAddress.Loopback, 5000, listenOptions =>
                     {
                         listenOptions.UseHttps(certificate);
                     });
                 })
-                .UseUrls("https://localhost:44343")
+                .UseUrls("https://localhost:5000")
                 .UseStartup<Startup>()
                 .Build();
     }
